@@ -171,24 +171,23 @@ section.highlighted {
 }
 
 .projects-container {
-    max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+   
 }
 
 /* Project Card Styles */
 .project-card {
     flex: 1;
-    background-color: #fff;
+    background-color: #fff; /* Card background color */
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    width: 100%;
+    width: 100%; /* Set width to 100% to occupy the entire width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -210,6 +209,14 @@ section.highlighted {
 .project-card:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease;
+}
+/* Project Card Image Styles */
+.project-card img {
+    max-width: 100%; /* Ensure images don't exceed the width of their container */
+    height: auto; /* Maintain the aspect ratio of the images */
+    margin: 10px 0; /* Add spacing above and below the image */
+    border: 1px solid #e0e0e0; /* Add a border to the images */
+    border-radius: 8px; /* Add rounded corners to the images */
 }
 
 /* Contact Section Styles */
