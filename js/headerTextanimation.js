@@ -1,5 +1,5 @@
 
-    const words = ["Full Stack Developer", "Software Engineer", "Web Developer"];
+    const words = ["Full Stack", "Web Developer"];
     let wordIndex = 0;
     let charIndex = 0;
 
