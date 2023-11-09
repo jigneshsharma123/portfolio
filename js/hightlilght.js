@@ -1,25 +1,48 @@
-const navLinks = document.querySelectorAll('nav ul li a');
-    const sections = document.querySelectorAll('section');
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(".highlightable");
 
-    navLinks.forEach((navLink, index) => {
-        navLink.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent the default link behavior (scrolling to the section)
+    // Function to highlight the current section
+    function highlightSection(entries, observer) {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const targetId = entry.target.id;
+                navLinks.forEach((navLink) => {
+                    navLink.classList.remove("active");
+                    if (navLink.getAttribute("href").substring(1) === targetId) {
+                        navLink.classList.add("active");
+                    }
+                });
+            }
+        });
+    }
 
-            // Remove the 'highlighted' class from all sections and links
-            sections.forEach((section) => {
-                section.classList.remove('highlighted');
-            });
-            navLinks.forEach((link) => {
-                link.classList.remove('highlighted');
-            });
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(highlightSection, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5, // Adjust the threshold as needed
+    });
 
-            // Add the 'highlighted' class to the clicked link and corresponding section
-            navLink.classList.add('highlighted');
-            sections[index].classList.add('highlighted');
+    // Observe each section
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
 
-            setTimeout(() => {
-                navLink.classList.remove('highlighted');
-                sections[index].classList.remove('highlighted');
-            }, 1000); // Remove the highlight after 1 second (adjust as needed)
+    // Handle click events
+    navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const targetId = link.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
         });
     });
+});
