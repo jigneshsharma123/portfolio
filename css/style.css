@@ -1,22 +1,28 @@
+/* Reset CSS */
 * {
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* Heading Fonts */
+
+/* Font Styles */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    color: #333;
 }
+
 p, li, a {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-size: 16px;
     line-height: 1.5;
+    color: #333;
 }
-/* Desktop view */
+
+/* Header Styles */
 header {
-    background-color: #333;
+    background-color: #007bff;
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -33,12 +39,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;padding: 10px 20px; 
+    color: #fff;
+    padding: 10px 20px;
     border-radius: 2px;
 }
 
-
-/* Header section */
+/* Header Section Styles */
 #about {
     background-color: #f0f0f0;
     text-align: center;
@@ -59,12 +65,14 @@ nav ul li a {
     padding-right: 4px;
     animation: typing 2s steps(20) infinite;
 }
+
 #animated-paragraph {
     font-size: 16px;
     margin-top: 1rem;
     opacity: 0;
     animation: fade-in 2s ease-in-out forwards;
 }
+
 nav ul li a {
     text-decoration: none;
     color: #fff;
@@ -72,13 +80,16 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #007bff;
+    background-color: #0056b3;
 }
+
 section.highlighted {
-    background-color: #007bff; /* Adjust the background color as needed */
+    background-color: #007bff;
     color: #de0202;
-    transition: background-color 1s ease; /* Adjust the duration as needed */
+    transition: background-color 1s ease;
 }
+
+/* Skills Section Styles */
 #skills {
     background-color: #E8F5E9;
     text-align: center;
@@ -103,15 +114,7 @@ section.highlighted {
     animation: fade-in 1s forwards;
 }
 
-/* Animation for skills */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+/* Skills Animation Styles */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -133,19 +136,8 @@ section.highlighted {
 #typing-animation {
     color: #007bff;
 }
-/* Responsive view for screens smaller than 768px */
-@media (max-width: 768px) {
-    nav ul {
-        text-align: center;
-        padding: 1rem 0;
-    }
 
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-}
-/* Separator styles */
+/* Separator Styles */
 .section-divider {
     height: 2px;
     background: linear-gradient(90deg, #007bff, #ff7f00, #00e700);
@@ -153,13 +145,15 @@ section.highlighted {
     background-position: 100% 0;
     animation: divider-animation 2s linear infinite;
 }
-/* Animation for skills on hover */
+
+/* Skills Hover Animation Styles */
 .skills-list li:hover {
-    transform: scale(1.1); /* Adjust the scale factor as needed */
-    transition: transform 0.3s ease; /* Adjust the duration as needed */
-  cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
-/* Animation for the separator */
+
+/* Separator Animation Styles */
 @keyframes divider-animation {
     0% {
         background-position: 100% 0;
@@ -169,10 +163,9 @@ section.highlighted {
     }
 }
 
-
-/* Styles for the project section */
+/* Projects Section Styles */
 #projects {
-    background-color: #f0f0f0; /* Adjust the background color as needed */
+    background-color: #f0f0f0;
     text-align: center;
     padding: 3rem 0;
 }
@@ -185,16 +178,16 @@ section.highlighted {
     justify-content: space-between;
 }
 
-/* Styles for project cards */
+/* Project Card Styles */
 .project-card {
     flex: 1;
-    background-color: #fff; /* Card background color */
+    background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     margin: 10px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px; /* Adjust the max-width as needed to control the card width */
+    max-width: 300px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -209,20 +202,19 @@ section.highlighted {
 
 .project-card a {
     text-decoration: none;
-    color: #007bff; /* Link color */
+    color: #007bff;
     margin: 5px 0;
 }
 
-/* Hover effect for project cards */
+/* Project Card Hover Effect Styles */
 .project-card:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease;
 }
 
-
-/* Styles for the contact section */
+/* Contact Section Styles */
 #contact {
-    background-color: #f0f0f0; /* Background color for the contact section */
+    background-color: #f0f0f0;
     text-align: center;
     padding: 3rem 0;
 }
@@ -266,8 +258,8 @@ section.highlighted {
 }
 
 .contact-form button {
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
@@ -275,33 +267,45 @@ section.highlighted {
 }
 
 .contact-form button:hover {
-    background-color: #0056b3; /* Button hover background color */
+    background-color: #0056b3;
 }
 
-/* Media query for responsive design */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .contact-info,
-    .contact-form {
-        flex: 100%;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-    }
-}
-/* Style for the notification */
+/* Notification Styles */
 #notification {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: red; /* Background color for the notification */
-    color: #000; /* Text color for the notification */
+    background-color: red;
+    color: #fff;
     padding: 10px 20px;
     display: none;
-    z-index: 9999; /* Ensure it appears on top of other content */
+    z-index: 9999;
+}
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position:absolute;
+    width:100%;
+
+}
+
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    color:white;
+    
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Footer Hover Effect */
+footer a:hover {
+    text-decoration: underline;
 }
