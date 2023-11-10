@@ -37,6 +37,13 @@ const driverObj = driver({
         title: 'Discover My Projects',
         description: 'Here you can check out the projects I have worked on. Click "Next" to explore!'
       }
+    },
+    {
+      element : '#scrollBtn',
+      popover : {
+        title : 'scroll Button',
+        description : 'Help in moving quickly at the top of the page'
+      }
     }
   ]
 });
